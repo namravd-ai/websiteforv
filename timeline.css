@@ -1,0 +1,104 @@
+body {
+margin: 0;
+background: #0b0b0f;
+color: white;
+font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.heading {
+text-align: center;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+/* Timeline container */
+.timeline {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/* Memory card */
+.memory {
+margin:80px 0;
+text-align: center;
+opacity: 0;
+transform: translateY(60px);
+transition: 0.8s;
+cursor: pointer;
+}
+
+.memory img {
+width: 400px;
+border-radius: 25px;
+}
+
+/* Visible animation */
+.memory.show {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Caption */
+.caption {
+margin-top: 10px;
+}
+
+/* Hidden message */
+.hidden {
+opacity: 0;
+margin-top: 10px;
+color: #ff9eb5;
+transition: 0.5s;
+}
+
+.memory.active .hidden {
+opacity: 1;
+}
+
+/* Ending */
+.ending {
+text-align: center;
+margin: 100px 0;
+opacity: 0;
+transition: 1s;
+}
+
+.ending.show {
+opacity: 1;
+}
+
+.final-btn {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 12px 28px;
+  background: #ff4d6d;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.back-btn {
+position: fixed;
+top: 25px;
+left: 25px;
+
+padding: 8px 16px;
+background: rgba(255, 255, 255, 0.08);
+color: white;
+border-radius: 20px;
+text-decoration: none;
+font-size: 14px;
+
+backdrop-filter: blur(6px);
+transition: 0.3s;
+}
+
+.back-btn:hover {
+background: rgba(255, 77, 109, 0.3);
+transform: translateX(-3px);
+}

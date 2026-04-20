@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Something for You</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="baby pink">
+
+<div class="overlay">
+    <h1 class="title" style=color:Black>Hey Sweety.</h1>
+    <p class="subtitle" style=color:Black>I made something.</p>
+    <p class="subtitle2" style=color:Black>Take your time with it.Click on the floating letters.</p>
+</div>
+
+<!-- Floating letters -->
+<div class="letters">
+    <div class="letter" onclick="openLetter(this)">💌</div>
+    <div class="letter" onclick="openLetter(this)">💌</div>
+    <div class="letter" onclick="openLetter(this)">💌</div>
+</div>
+
+<!-- Expanded letter -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closeLetter()">×</span>
+        <p id="letterText"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<a href="timeline.html" class="enter-btn">Go to Timeline →</a>
+<a href="connect.html" class="back-btn">← Back</a>
+</body>
+</html>

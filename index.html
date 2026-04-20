@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>One question ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #f265a2, #d63384);
+      font-family: Arial, sans-serif;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+       font-family: 'Poppins', sans-serif;
+    }
+
+    /* Center content */
+    .box {
+      text-align: center;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 45px;
+      margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 25px;
+      color: antiquewhite;
+    }
+
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      width: 220px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #ff3355;
+    }
+
+    /* HEARTS BACKGROUND */
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255, 255, 255, 0.4);
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEARTS -->
+
+  <div class="hearts" id="hearts"></div>
+
+  <!-- CONTENT -->
+
+  <div class="box">
+    <h1>One question.</h1>
+    <p>Who is Namra's favourite person?</p>
+
+
+<input type="text" id="answer" placeholder="Type your answer">
+<br>
+<button onclick="checkAnswer()">Enter</button>
+
+
+  </div>
+
+  <script>
+    // HEART GENERATOR
+    const heartsContainer = document.getElementById("hearts");
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (30 + Math.random() * 25) + "px";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 400);
+
+    // ANSWER CHECK
+    function checkAnswer() {
+      const ans = document.getElementById("answer").value.toLowerCase();
+
+      if (ans.includes("vrushti")) {
+        window.location.href = "connect.html";
+      } 
+      else {
+        alert("Try again 😌");
+      }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+</body>
+</html>
